@@ -1,0 +1,104 @@
+[gd_scene load_steps=37 format=2]
+
+[ext_resource path="res://tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://KinematicBody2D.gd" type="Script" id=2]
+[ext_resource path="res://animacoes/Idle__001.png" type="Texture" id=3]
+[ext_resource path="res://animacoes/Idle__002.png" type="Texture" id=4]
+[ext_resource path="res://animacoes/Idle__003.png" type="Texture" id=5]
+[ext_resource path="res://animacoes/Idle__004.png" type="Texture" id=6]
+[ext_resource path="res://animacoes/Idle__005.png" type="Texture" id=7]
+[ext_resource path="res://animacoes/Idle__006.png" type="Texture" id=8]
+[ext_resource path="res://animacoes/Idle__007.png" type="Texture" id=9]
+[ext_resource path="res://animacoes/Idle__008.png" type="Texture" id=10]
+[ext_resource path="res://animacoes/Idle__009.png" type="Texture" id=11]
+[ext_resource path="res://animacoes/Jump__000.png" type="Texture" id=12]
+[ext_resource path="res://animacoes/Jump__001.png" type="Texture" id=13]
+[ext_resource path="res://animacoes/Jump__002.png" type="Texture" id=14]
+[ext_resource path="res://animacoes/Jump__003.png" type="Texture" id=15]
+[ext_resource path="res://animacoes/Jump__004.png" type="Texture" id=16]
+[ext_resource path="res://animacoes/Jump__005.png" type="Texture" id=17]
+[ext_resource path="res://animacoes/Jump__006.png" type="Texture" id=18]
+[ext_resource path="res://animacoes/Jump__007.png" type="Texture" id=19]
+[ext_resource path="res://animacoes/Jump__008.png" type="Texture" id=20]
+[ext_resource path="res://animacoes/Jump__009.png" type="Texture" id=21]
+[ext_resource path="res://animacoes/Run__000.png" type="Texture" id=22]
+[ext_resource path="res://animacoes/Run__001.png" type="Texture" id=23]
+[ext_resource path="res://animacoes/Run__002.png" type="Texture" id=24]
+[ext_resource path="res://animacoes/Run__003.png" type="Texture" id=25]
+[ext_resource path="res://animacoes/Run__004.png" type="Texture" id=26]
+[ext_resource path="res://animacoes/Run__005.png" type="Texture" id=27]
+[ext_resource path="res://animacoes/Run__006.png" type="Texture" id=28]
+[ext_resource path="res://animacoes/Run__007.png" type="Texture" id=29]
+[ext_resource path="res://animacoes/Run__008.png" type="Texture" id=30]
+[ext_resource path="res://animacoes/Run__009.png" type="Texture" id=31]
+[ext_resource path="res://StaticBody2D.gd" type="Script" id=32]
+[ext_resource path="res://icon.png" type="Texture" id=33]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ) ],
+"loop": true,
+"name": "run",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 25.5912, 39.1086 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 32.1312, 31.8995 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 50, 50 )
+collision_use_kinematic = true
+format = 1
+tile_data = PoolIntArray( 0, 3, 0, 1, 3, 0, 2, 3, 0, 3, 3, 0, 4, 3, 0, 5, 3, 0, 6, 3, 0, 7, 3, 0, 8, 3, 0, 9, 3, 0, 10, 3, 0, 11, 3, 0, 12, 3, 0, 13, 3, 0, 14, 3, 0, 65536, 3, 0, 65550, 3, 0, 131072, 3, 0, 131086, 3, 0, 196608, 3, 0, 196622, 3, 0, 262144, 3, 0, 262148, 3, 0, 262154, 3, 0, 262158, 3, 0, 327680, 3, 0, 327684, 3, 0, 327690, 3, 0, 327694, 3, 0, 393216, 3, 0, 393220, 3, 0, 393226, 3, 0, 393230, 3, 0, 458752, 3, 0, 458756, 3, 0, 458759, 3, 0, 458762, 3, 0, 458766, 3, 0, 524288, 3, 0, 524292, 3, 0, 524295, 3, 0, 524298, 3, 0, 524302, 3, 0, 589824, 3, 0, 589828, 3, 0, 589831, 3, 0, 589834, 3, 0, 589838, 3, 0, 655360, 3, 0, 655361, 3, 0, 655362, 3, 0, 655363, 3, 0, 655364, 3, 0, 655365, 3, 0, 655366, 3, 0, 655367, 3, 0, 655368, 3, 0, 655369, 3, 0, 655370, 3, 0, 655371, 3, 0, 655372, 3, 0, 655373, 3, 0, 655374, 3, 0 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="KinematicBody2D"]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D"]
+position = Vector2( 99.6722, 445.108 )
+scale = Vector2( 0.18, 0.18 )
+frames = SubResource( 1 )
+animation = "jump"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+position = Vector2( 103.672, 447.108 )
+shape = SubResource( 2 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+editor/display_folded = true
+script = ExtResource( 32 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="icon" type="Sprite" parent="StaticBody2D"]
+position = Vector2( 25.0953, 517.579 )
+texture = ExtResource( 33 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 24.9355, 518.146 )
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
